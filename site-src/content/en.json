@@ -1,0 +1,283 @@
+{
+  "locale": "en",
+  "languageName": "English",
+  "brand": "LookBerry",
+  "navigation": {
+    "home": "LookBerry",
+    "homeAriaLabel": "LookBerry home",
+    "how": "How it works",
+    "battles": "Fashion Battles",
+    "shoppers": "For shoppers",
+    "sellers": "For sellers",
+    "partners": "For partners",
+    "contact": "Contact",
+    "languageLabel": "Current language",
+    "primaryNavLabel": "Primary navigation",
+    "mobileNavLabel": "Menu",
+    "openNavLabel": "Open navigation",
+    "emailPlaceholder": "Email · placeholder",
+    "emailTitle": "Placeholder email · replace before launch"
+  },
+  "accessibility": {
+    "editorialImagesLabel": "Editorial image placements"
+  },
+  "mediaAlt": {
+    "homeHeroLookA": "Editorial portrait of a fashion look, reserved for an approved LookBerry still.",
+    "homeHeroLookB": "A second editorial fashion look, reserved for an approved LookBerry still.",
+    "battleEpisode": "Fashion Battles episode still, reserved for an approved production image.",
+    "shopProduct": "A marketplace product image, reserved for an approved currently listed item.",
+    "partnerProduction": "An in-kind partner contribution shown in an approved production context."
+  },
+  "skipLink": "Skip to content",
+  "imagePlaceholder": {
+    "eyebrow": "Editorial slot",
+    "line": "Approved still pending"
+  },
+  "home": {
+    "title": "LookBerry — fashion discovered, considered and found",
+    "description": "A student project introducing LookBerry’s fashion marketplace and Fashion Battles, with clear paths for shoppers, sellers and partners.",
+    "heroEyebrow": "Fashion discovery · interaction · shopping",
+    "heroTitle": "See the look. Find it where it’s listed.",
+    "heroText": "LookBerry brings fashion discovery, social interaction and shopping together. Fashion Battles is its fashion competition and content format.",
+    "heroCta": "Choose your route",
+    "heroNote": "Fashion Battles episodes are published on YouTube. Featured products can be bought through LookBerry where they are listed.",
+    "pathsEyebrow": "Start with what you need",
+    "pathsTitle": "Three ways into LookBerry",
+    "pathLabel": "Explore this path",
+    "paths": [
+      {
+        "number": "01",
+        "persona": "Marketplace seller",
+        "question": "I want to list my products. How does the 10% commission work, and when am I paid?",
+        "route": "sellers",
+        "linkLabel": "For sellers"
+      },
+      {
+        "number": "02",
+        "persona": "Fashion Battles partner",
+        "question": "I can contribute a product or service. What will be featured, and what happens to it after filming?",
+        "route": "partners",
+        "linkLabel": "For partners"
+      },
+      {
+        "number": "03",
+        "persona": "Fashion shopper",
+        "question": "I saw a look. Is the product listed, and what should I know before buying?",
+        "route": "shoppers",
+        "linkLabel": "For shoppers"
+      }
+    ],
+    "howEyebrow": "The format and the marketplace",
+    "howTitle": "From a look to a listing",
+    "howText": "Fashion Battles builds awareness for the marketplace. It is a content format within the LookBerry business, not a promise of sales.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Watch",
+        "text": "Fashion Battles episodes are published on YouTube, with links in the LookBerry app."
+      },
+      {
+        "number": "02",
+        "title": "Like the model or the look",
+        "text": "The app has Attraction Likes for the model and Style Likes for the look."
+      },
+      {
+        "number": "03",
+        "title": "Find the product",
+        "text": "A featured product can be bought through LookBerry where it is listed. A purchase carries more voting weight than a like alone."
+      }
+    ],
+    "battleEyebrow": "The content format",
+    "battleTitle": "Fashion Battles",
+    "battleText": "An interactive fashion competition connecting looks, audience interaction and product discovery.",
+    "battleStatus": "Two episodes have been released. A third is in production.",
+    "battleCta": "Watch on YouTube",
+    "battleCaption": "Approved Fashion Battles still · image pending",
+    "proofEyebrow": "What is confirmed",
+    "proofTitle": "Clear terms. No invented proof.",
+    "proofItems": [
+      { "label": "Marketplace commission", "value": "10% on each marketplace sale" },
+      { "label": "Listing fees", "value": "Listing fees are not part of the model" },
+      { "label": "Audience figures", "value": "No audience figures to share yet" }
+    ],
+    "faqEyebrow": "Straight answers",
+    "faqTitle": "Questions worth asking",
+    "faq": [
+      {
+        "question": "Is every product shown in Fashion Battles available to buy?",
+        "answer": "No. A featured product can be bought through LookBerry where it is listed. Not every product shown is necessarily available."
+      },
+      {
+        "question": "How does the marketplace earn commission?",
+        "answer": "LookBerry earns a 10% commission on each marketplace sale. Listing fees are not part of the model."
+      },
+      {
+        "question": "What do Attraction Likes and Style Likes refer to?",
+        "answer": "Attraction Likes are for the model; Style Likes are for the look. A purchase carries more voting weight than a like alone. The strategy does not confirm a weighting ratio."
+      },
+      {
+        "question": "Does taking part guarantee reach, engagement or sales?",
+        "answer": "No. Participation guarantees no reach, engagement or sales."
+      },
+      {
+        "question": "How are shipping and returns handled?",
+        "answerPlaceholder": "To be confirmed in the seller terms"
+      },
+      {
+        "question": "Who handles fulfilment?",
+        "answerPlaceholder": "To be confirmed in the seller terms"
+      },
+      {
+        "question": "When are sellers paid?",
+        "answerPlaceholder": "To be confirmed in the seller terms"
+      }
+    ],
+    "contactEyebrow": "A direct conversation",
+    "contactTitle": "Have a question about listing or contributing?",
+    "contactText": "Use the demo form to preview its states. Nothing is sent or stored.",
+    "contactCta": "Open the demo form"
+  },
+  "pages": {
+    "shoppers": {
+      "title": "For shoppers — LookBerry student project",
+      "description": "How to discover and shop fashion through LookBerry, with clear notes about product availability and unconfirmed terms.",
+      "eyebrow": "For shoppers",
+      "heading": "A look caught your eye.",
+      "intro": "Find products through the LookBerry marketplace. A product featured in Fashion Battles can be bought where it is listed; not every featured product is necessarily available.",
+      "imageSlot": "shopProduct",
+      "imageCaption": "Marketplace product imagery · approved listing image pending",
+      "factsTitle": "What is confirmed",
+      "factsHeading": "The marketplace in brief",
+      "faqEyebrow": "Straight answers",
+      "faqTitle": "Before you buy",
+      "facts": [
+        "LookBerry is a fashion resale and marketplace business operating through an app and website.",
+        "LookBerry earns a 10% commission on each marketplace sale.",
+        "A purchase carries more voting weight than a like alone."
+      ],
+      "faq": [
+        {
+          "question": "Is the product I saw in an episode definitely available?",
+          "answer": "No. A featured product can be bought through LookBerry where it is listed."
+        },
+        {
+          "question": "What should I know about shipping?",
+          "answerPlaceholder": "To be confirmed in the seller terms"
+        },
+        {
+          "question": "What should I know about returns?",
+          "answerPlaceholder": "To be confirmed in the seller terms"
+        }
+      ],
+      "cta": "Browse the LookBerry marketplace",
+      "ctaKind": "shop"
+    },
+    "sellers": {
+      "title": "For sellers — LookBerry student project",
+      "description": "Marketplace seller terms confirmed by LookBerry’s supplied strategy, with open questions clearly marked.",
+      "eyebrow": "For marketplace sellers",
+      "heading": "A sales channel, with the commission stated plainly.",
+      "intro": "Brands and sellers can list products on LookBerry. The marketplace is the core business; product sales are currently limited, and the strategy makes no sales guarantee.",
+      "imageSlot": "shopProduct",
+      "imageCaption": "Product listing imagery · approved listing image pending",
+      "factsTitle": "The terms confirmed so far",
+      "termsEyebrow": "Marketplace terms",
+      "termsHeading": "What is confirmed and what remains open",
+      "facts": [
+        "LookBerry earns a 10% commission on each marketplace sale.",
+        "Listing fees are not part of the model.",
+        "Product sales are currently limited. No seller research or verified audience figures are available in the strategy."
+      ],
+      "terms": [
+        { "label": "Commission", "value": "10% on each marketplace sale", "placeholder": false },
+        { "label": "Listing fees", "value": "Listing fees are not part of the model", "placeholder": false },
+        { "label": "Shipping", "value": "To be confirmed in the seller terms", "placeholder": true },
+        { "label": "Fulfilment", "value": "To be confirmed in the seller terms", "placeholder": true },
+        { "label": "Returns", "value": "To be confirmed in the seller terms", "placeholder": true },
+        { "label": "Payout timing", "value": "To be confirmed in the seller terms", "placeholder": true }
+      ],
+      "note": "Fashion Battles may support product visibility. Participation does not guarantee reach, engagement or sales.",
+      "cta": "Ask about listing",
+      "ctaKind": "sellerContact"
+    },
+    "partners": {
+      "title": "For partners — LookBerry student project",
+      "description": "An accurate introduction to current in-kind Fashion Battles partnerships, without unverified reach or sales claims.",
+      "eyebrow": "For Fashion Battles partners",
+      "heading": "Contribute to a production on agreed terms.",
+      "intro": "Current brand partnerships contribute products or services in kind. The contribution and how it is used depend on the agreement.",
+      "imageSlot": "partnerProduction",
+      "imageCaption": "Production image · use only with partner approval",
+      "factsTitle": "What the strategy confirms",
+      "factsHeading": "Current partnership terms",
+      "facts": [
+        "Partners may contribute products or services to production under agreed terms.",
+        "Barter contributions are in-kind production support, not cash revenue.",
+        "Participation guarantees no reach, engagement or sales."
+      ],
+      "note": "Paid advertising integrations are a future possibility. They have not launched, and no package or price has been set.",
+      "cta": "Discuss a contribution",
+      "ctaKind": "partnerContact"
+    },
+    "battles": {
+      "title": "Fashion Battles — LookBerry student project",
+      "description": "Fashion Battles is LookBerry’s interactive fashion competition and content format, published on YouTube.",
+      "eyebrow": "Fashion Battles · YouTube",
+      "heading": "Fashion, seen from more than one angle.",
+      "intro": "Fashion Battles is an interactive fashion competition and content format that supports awareness, product discovery and the LookBerry marketplace.",
+      "imageSlot": "battleEpisode",
+      "imageCaption": "Released episode still · authorized image pending",
+      "factsTitle": "The current status",
+      "facts": [
+        "Two episodes have been released.",
+        "A third episode is in production.",
+        "A fourth episode is planned, not filmed."
+      ],
+      "mechanicTitle": "The terms the strategy confirms",
+      "mechanicsHeading": "Only the stated mechanics",
+      "statusEyebrow": "Production status",
+      "statusHeading": "Where the series stands",
+      "mechanics": [
+        "Attraction Likes are for the model.",
+        "Style Likes are for the look.",
+        "A purchase carries more voting weight than a like alone."
+      ],
+      "note": "The strategy does not provide a voting ratio or verified audience figures. No additional voting mechanics are stated here.",
+      "cta": "Watch on YouTube",
+      "ctaKind": "youtube"
+    },
+    "contact": {
+      "title": "Contact — LookBerry student project",
+      "description": "Demo-only contact form for a student project. No personal information is requested, sent or stored.",
+      "eyebrow": "Contact · demo mode",
+      "heading": "Try the inquiry form.",
+      "intro": "This form demonstrates client-side validation and feedback only. It does not ask for personal information, send a message or store a selection.",
+      "demoNotice": "Student project demo. Nothing is sent or stored.",
+      "formLegend": "Choose an inquiry type",
+      "intentLabel": "I’m interested as a",
+      "intentPrompt": "Select one option",
+      "intentSeller": "Marketplace seller",
+      "intentPartner": "Fashion Battles partner",
+      "ackLabel": "I understand this is a demo and nothing will be sent.",
+      "submitLabel": "Preview demo response",
+      "errorIntent": "Choose whether you are a seller or partner.",
+      "errorAck": "Confirm that this is a demo before continuing.",
+      "errorValidation": "Review the highlighted fields and try again.",
+      "success": "Demo complete. Nothing was sent or stored.",
+      "errorGeneric": "The demo could not be completed. Please try again.",
+      "formNoscript": "Enable JavaScript to preview the form. No message is sent.",
+      "mailtoIntro": "Contact email placeholder:",
+      "mailtoHeading": "Email address placeholder",
+      "mailtoTitle": "Placeholder email · replace before launch",
+      "mailtoNote": "This highlighted address is a placeholder and is not an active LookBerry contact."
+    }
+  },
+  "footer": {
+    "sitePurpose": "Fashion discovery, interaction and shopping.",
+    "studentLine": "Student project, Lazarski University. Not the official LookBerry website.",
+    "privacyPlaceholder": "Privacy policy · placeholder",
+    "termsPlaceholder": "Terms · placeholder",
+    "backToTop": "Back to top",
+    "navLabel": "Footer navigation"
+  }
+}

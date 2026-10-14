@@ -1,0 +1,65 @@
+{
+  "BASE_URL": "https://Hugh0603.github.io/lookberry-website/",
+  "studentProjectSafeguards": true,
+  "activeLocales": [
+    {
+      "code": "en",
+      "label": "English",
+      "pathPrefix": "",
+      "copyFile": "site-src/content/en.json"
+    }
+  ],
+  "routes": {
+    "home": "",
+    "shoppers": "for-shoppers/",
+    "sellers": "for-sellers/",
+    "partners": "for-partners/",
+    "battles": "fashion-battles/",
+    "contact": "contact/"
+  },
+  "externalLinks": {
+    "shop": "https://www.lookberry.com/shop",
+    "youtube": "https://www.youtube.com/@lookberry.dubai"
+  },
+  "contact": {
+    "mailtoAddress": "lookberry-contact@example.invalid",
+    "mailtoIsPlaceholder": true
+  },
+  "imageSlots": {
+    "homeHeroLookA": {
+      "src": "",
+      "alt": "Editorial portrait of a fashion look, reserved for an approved LookBerry still.",
+      "aspectRatio": "4 / 5",
+      "objectPosition": "50% 24%",
+      "shotListNote": "Full-length talent in a clean studio; include footwear, hem and headroom; natural stance; no unapproved logo props."
+    },
+    "homeHeroLookB": {
+      "src": "",
+      "alt": "A second editorial fashion look, reserved for an approved LookBerry still.",
+      "aspectRatio": "4 / 5",
+      "objectPosition": "50% 28%",
+      "shotListNote": "Second full-length look with a distinct silhouette; keep garment edges and footwear visible."
+    },
+    "battleEpisode": {
+      "src": "",
+      "alt": "Fashion Battles episode still, reserved for an approved production image.",
+      "aspectRatio": "16 / 9",
+      "objectPosition": "50% 50%",
+      "shotListNote": "Approved still from a released episode; keep faces and outfits inside the crop; do not add vote counts or graphic claims."
+    },
+    "shopProduct": {
+      "src": "",
+      "alt": "A marketplace product image, reserved for an approved currently listed item.",
+      "aspectRatio": "4 / 5",
+      "objectPosition": "50% 50%",
+      "shotListNote": "One item that is currently listed; show the complete garment against a neutral set."
+    },
+    "partnerProduction": {
+      "src": "",
+      "alt": "An in-kind partner contribution shown in an approved production context.",
+      "aspectRatio": "3 / 2",
+      "objectPosition": "50% 45%",
+      "shotListNote": "Show the agreed contribution in production context only where the partnership terms permit; avoid implying unagreed endorsement."
+    }
+  }
+}
