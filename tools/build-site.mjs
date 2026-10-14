@@ -177,11 +177,11 @@ function renderHome(copy, localeEntry) {
   <div class="hero-copy">
     <p class="eyebrow">${escapeHtml(home.heroEyebrow)}</p>
     <h1 id="home-title" aria-label="${escapeHtml(home.heroTitle)}">${home.heroLines.map((line) => `<span class="hero-title-line"><span>${escapeHtml(line)}</span></span>`).join('')}</h1>
-    <p class="hero-deck" data-hero-reveal="1">${escapeHtml(home.heroText)}</p>
-    <div data-hero-reveal="2">${renderHeaderLink(copy, navAnchor(routeFor('home'), 'choose-path', localeEntry), home.heroCta)}</div>
-    <p class="hero-note" data-hero-reveal="2">${escapeHtml(home.heroNote)}</p>
+    <p class="hero-deck">${escapeHtml(home.heroText)}</p>
+    ${renderHeaderLink(copy, navAnchor(routeFor('home'), 'choose-path', localeEntry), home.heroCta)}
+    <p class="hero-note">${escapeHtml(home.heroNote)}</p>
   </div>
-  <nav class="hero-route-index" aria-label="${escapeHtml(home.routeIndexLabel)}" data-hero-reveal="3">
+  <nav class="hero-route-index" aria-label="${escapeHtml(home.routeIndexLabel)}">
     ${home.routeIndex.map((item) => `<a class="hero-route" href="${escapeHtml(siteUrl(routeFor(item.route), localeEntry))}"><span class="hero-route-number">${escapeHtml(item.number)}</span><span class="hero-route-copy"><span class="hero-route-label">${escapeHtml(item.label)}</span><span class="hero-route-question">${escapeHtml(item.question)}</span></span><span class="hero-route-arrow" aria-hidden="true">↗</span></a>`).join('')}
   </nav>
   <p class="hero-folio" aria-hidden="true">LOOKBERRY / FASHION IN CONTEXT</p>
