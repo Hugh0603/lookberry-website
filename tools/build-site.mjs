@@ -208,6 +208,7 @@ function renderHome(copy, localeEntry) {
     ${renderHeaderLink(copy, navAnchor(routeFor('home'), 'choose-path', localeEntry), home.heroCta)}
     <p class="hero-note">${escapeHtml(home.heroNote)}</p>
   </div>
+  ${renderImage('homeCampaign', copy, { className: 'hero-media', eager: true, caption: home.heroCaption })}
   <nav class="hero-route-index" aria-label="${escapeHtml(home.routeIndexLabel)}">
     ${home.routeIndex.map((item) => `<a class="hero-route" href="${escapeHtml(siteUrl(routeFor(item.route), localeEntry))}"><span class="hero-route-number">${escapeHtml(item.number)}</span><span class="hero-route-copy"><span class="hero-route-label">${escapeHtml(item.label)}</span><span class="hero-route-question">${escapeHtml(item.question)}</span></span><span class="hero-route-arrow" aria-hidden="true">↗</span></a>`).join('')}
   </nav>

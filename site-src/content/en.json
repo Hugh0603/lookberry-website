@@ -22,9 +22,10 @@
     "editorialImagesLabel": "Editorial image placements"
   },
   "mediaAlt": {
-    "battleEpisode": "Fashion Battles episode still, reserved for an approved production image.",
-    "shopProduct": "A marketplace product image, reserved for an approved currently listed item.",
-    "partnerProduction": "An in-kind partner contribution shown in an approved production context."
+    "battleEpisode": "Two adult models in black editorial looks on a dark studio runway; concept imagery.",
+    "shopProduct": "Model in a black tailored look with a black shoulder bag; concept imagery, not a verified listing.",
+    "partnerProduction": "Fashion professionals preparing a model in a dark studio; concept imagery.",
+    "homeCampaign": "Model in a structured black coat and sunglasses against a brushed-metal studio set; concept imagery."
   },
   "skipLink": "Skip to content",
   "imagePlaceholder": {
@@ -97,7 +98,8 @@
     "battleText": "An interactive fashion competition connecting looks, audience interaction and product discovery.",
     "battleStatus": "Two episodes have been released. A third is in production.",
     "battleCta": "Watch on YouTube",
-    "battleCaption": "Approved Fashion Battles still · image pending",
+    "heroCaption": "Original campaign concept · student project",
+    "battleCaption": "Fashion Battles visual concept · student project",
     "proofEyebrow": "What is confirmed",
     "proofTitle": "Clear terms. No invented proof.",
     "proofItems": [
@@ -150,7 +152,7 @@
       "heading": "A look caught your eye.",
       "intro": "Find products through the LookBerry marketplace. A product featured in Fashion Battles can be bought where it is listed; not every featured product is necessarily available.",
       "imageSlot": "shopProduct",
-      "imageCaption": "Marketplace product imagery · approved listing image pending",
+      "imageCaption": "Fashion styling concept · student project",
       "factsTitle": "What is confirmed",
       "factsHeading": "The marketplace in brief",
       "faqEyebrow": "Straight answers",
@@ -184,7 +186,7 @@
       "heading": "A sales channel for your products.",
       "intro": "Brands and sellers can list products on LookBerry. The marketplace is the core business; product sales are currently limited, and the strategy makes no sales guarantee.",
       "imageSlot": "shopProduct",
-      "imageCaption": "Product listing imagery · approved listing image pending",
+      "imageCaption": "Fashion styling concept · student project",
       "factsTitle": "The terms confirmed so far",
       "termsEyebrow": "Marketplace terms",
       "termsHeading": "What is confirmed and what remains open",
@@ -212,7 +214,7 @@
       "heading": "Contribute to a production on agreed terms.",
       "intro": "Current brand partnerships contribute products or services in kind. The contribution and how it is used depend on the agreement.",
       "imageSlot": "partnerProduction",
-      "imageCaption": "Production image · use only with partner approval",
+      "imageCaption": "Studio art direction concept · student project",
       "factsTitle": "What the strategy confirms",
       "factsHeading": "Current partnership terms",
       "facts": [
@@ -231,7 +233,7 @@
       "heading": "Fashion, seen from more than one angle.",
       "intro": "Fashion Battles is an interactive fashion competition and content format that supports awareness, product discovery and the LookBerry marketplace.",
       "imageSlot": "battleEpisode",
-      "imageCaption": "Released episode still · authorized image pending",
+      "imageCaption": "Fashion Battles visual concept · student project",
       "factsTitle": "The current status",
       "facts": [
         "Two episodes have been released.",

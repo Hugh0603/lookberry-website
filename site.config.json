@@ -29,25 +29,32 @@
   },
   "imageSlots": {
     "battleEpisode": {
-      "src": "",
-      "alt": "Fashion Battles episode still, reserved for an approved production image.",
+      "src": "assets/images/fashion-battles.jpg",
+      "alt": "Two adult models in black editorial looks on a dark studio runway; concept imagery.",
       "aspectRatio": "16 / 9",
       "objectPosition": "50% 50%",
-      "shotListNote": "Approved still from a released episode; keep faces and outfits inside the crop; do not add vote counts or graphic claims."
+      "shotListNote": "Original student-project visual concept, not a released episode still; if replaced with real footage, crop faces and outfits inside the frame and add no unverified vote claims."
     },
     "shopProduct": {
-      "src": "",
-      "alt": "A marketplace product image, reserved for an approved currently listed item.",
+      "src": "assets/images/marketplace-look.jpg",
+      "alt": "Model in a black tailored look with a black shoulder bag; concept imagery, not a verified listing.",
       "aspectRatio": "4 / 5",
       "objectPosition": "50% 50%",
-      "shotListNote": "One item that is currently listed; show the complete garment against a neutral set."
+      "shotListNote": "Original student-project styling concept, not a verified listing; when replaced with a real item, show the complete garment against a dark studio set."
     },
     "partnerProduction": {
-      "src": "",
-      "alt": "An in-kind partner contribution shown in an approved production context.",
+      "src": "assets/images/production-studio.jpg",
+      "alt": "Fashion professionals preparing a model in a dark studio; concept imagery.",
       "aspectRatio": "3 / 2",
       "objectPosition": "50% 45%",
-      "shotListNote": "Show the agreed contribution in production context only where the partnership terms permit; avoid implying unagreed endorsement."
+      "shotListNote": "Original studio concept image, not documentation of a real partnership; replace with approved production imagery when available."
+    },
+    "homeCampaign": {
+      "src": "assets/images/home-campaign.jpg",
+      "alt": "Model in a structured black coat and sunglasses against a brushed-metal studio set; concept imagery.",
+      "aspectRatio": "4 / 5",
+      "objectPosition": "72% 50%",
+      "shotListNote": "Original student-project campaign concept image, not an official LookBerry campaign or approved brand asset."
     }
   }
 }
