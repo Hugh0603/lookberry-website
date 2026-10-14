@@ -22,8 +22,6 @@
     "editorialImagesLabel": "Editorial image placements"
   },
   "mediaAlt": {
-    "homeHeroLookA": "Editorial portrait of a fashion look, reserved for an approved LookBerry still.",
-    "homeHeroLookB": "A second editorial fashion look, reserved for an approved LookBerry still.",
     "battleEpisode": "Fashion Battles episode still, reserved for an approved production image.",
     "shopProduct": "A marketplace product image, reserved for an approved currently listed item.",
     "partnerProduction": "An in-kind partner contribution shown in an approved production context."
@@ -38,33 +36,40 @@
     "description": "A student project introducing LookBerry’s fashion marketplace and Fashion Battles, with clear paths for shoppers, sellers and partners.",
     "heroEyebrow": "Fashion discovery · interaction · shopping",
     "heroTitle": "See the look. Find it where it’s listed.",
+    "heroLines": ["See the look.", "Find it where", "it’s listed."],
     "heroText": "LookBerry brings fashion discovery, social interaction and shopping together. Fashion Battles is its fashion competition and content format.",
     "heroCta": "Choose your route",
     "heroNote": "Fashion Battles episodes are published on YouTube. Featured products can be bought through LookBerry where they are listed.",
+    "routeIndexLabel": "Choose a route by what brings you here",
+    "routeIndex": [
+      { "number": "01", "label": "For shoppers", "question": "I saw a look. Is the product listed?", "route": "shoppers" },
+      { "number": "02", "label": "For sellers", "question": "I want to list my products.", "route": "sellers" },
+      { "number": "03", "label": "For partners", "question": "I can contribute a product or service.", "route": "partners" }
+    ],
     "pathsEyebrow": "Start with what you need",
     "pathsTitle": "Three ways into LookBerry",
     "pathLabel": "Explore this path",
     "paths": [
       {
         "number": "01",
+        "persona": "Fashion shopper",
+        "question": "I saw a look. Is the product listed, and what should I know before buying?",
+        "route": "shoppers",
+        "linkLabel": "For shoppers"
+      },
+      {
+        "number": "02",
         "persona": "Marketplace seller",
         "question": "I want to list my products. How does the 10% commission work, and when am I paid?",
         "route": "sellers",
         "linkLabel": "For sellers"
       },
       {
-        "number": "02",
+        "number": "03",
         "persona": "Fashion Battles partner",
         "question": "I can contribute a product or service. What will be featured, and what happens to it after filming?",
         "route": "partners",
         "linkLabel": "For partners"
-      },
-      {
-        "number": "03",
-        "persona": "Fashion shopper",
-        "question": "I saw a look. Is the product listed, and what should I know before buying?",
-        "route": "shoppers",
-        "linkLabel": "For shoppers"
       }
     ],
     "howEyebrow": "The format and the marketplace",

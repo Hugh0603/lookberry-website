@@ -26,20 +26,6 @@
     "mailtoIsPlaceholder": true
   },
   "imageSlots": {
-    "homeHeroLookA": {
-      "src": "",
-      "alt": "Editorial portrait of a fashion look, reserved for an approved LookBerry still.",
-      "aspectRatio": "4 / 5",
-      "objectPosition": "50% 24%",
-      "shotListNote": "Full-length talent in a clean studio; include footwear, hem and headroom; natural stance; no unapproved logo props."
-    },
-    "homeHeroLookB": {
-      "src": "",
-      "alt": "A second editorial fashion look, reserved for an approved LookBerry still.",
-      "aspectRatio": "4 / 5",
-      "objectPosition": "50% 28%",
-      "shotListNote": "Second full-length look with a distinct silhouette; keep garment edges and footwear visible."
-    },
     "battleEpisode": {
       "src": "",
       "alt": "Fashion Battles episode still, reserved for an approved production image.",

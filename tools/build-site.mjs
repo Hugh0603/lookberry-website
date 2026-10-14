@@ -140,7 +140,7 @@ function renderImage(slotKey, copy, options = {}) {
 }
 
 function sectionHeading(eyebrow, title, intro = '', id = '') {
-  return `<div class="section-heading"><p class="eyebrow">${escapeHtml(eyebrow)}</p><h2 id="${escapeHtml(id)}">${escapeHtml(title)}</h2>${intro ? `<p class="section-intro">${escapeHtml(intro)}</p>` : ''}</div>`;
+  return `<div class="section-heading" data-reveal><p class="eyebrow">${escapeHtml(eyebrow)}</p><h2 id="${escapeHtml(id)}">${escapeHtml(title)}</h2>${intro ? `<p class="section-intro">${escapeHtml(intro)}</p>` : ''}</div>`;
 }
 
 function renderFaq(items) {
@@ -158,7 +158,7 @@ function renderHeaderLink(copy, href, label, className = 'button') {
 
 function renderHome(copy, localeEntry) {
   const home = copy.home;
-  const pathCards = home.paths.map((item) => `<article class="path-panel path-panel-${escapeHtml(item.number)}">
+  const pathCards = home.paths.map((item) => `<article class="path-panel path-panel-${escapeHtml(item.number)}" data-reveal>
     <p class="path-number">${escapeHtml(item.number)}</p>
     <p class="eyebrow">${escapeHtml(item.persona)}</p>
     <h3>${escapeHtml(item.question)}</h3>
@@ -169,22 +169,21 @@ function renderHome(copy, localeEntry) {
     <h3>${escapeHtml(step.title)}</h3>
     <p>${escapeHtml(step.text)}</p>
   </article>`).join('');
-  const proof = home.proofItems.map((item) => `<div class="proof-item"><p class="eyebrow">${escapeHtml(item.label)}</p><p>${escapeHtml(item.value)}</p></div>`).join('');
+  const proof = home.proofItems.map((item) => `<div class="proof-item" data-reveal><p class="eyebrow">${escapeHtml(item.label)}</p><p>${escapeHtml(item.value)}</p></div>`).join('');
   const contactHref = siteUrl(routeFor('contact'), localeEntry);
 
   return `<main id="main" class="page-main home-page">
 <section class="hero hero-home" aria-labelledby="home-title">
   <div class="hero-copy">
     <p class="eyebrow">${escapeHtml(home.heroEyebrow)}</p>
-    <h1 id="home-title">${escapeHtml(home.heroTitle)}</h1>
-    <p class="hero-deck">${escapeHtml(home.heroText)}</p>
-    ${renderHeaderLink(copy, navAnchor(routeFor('home'), 'choose-path', localeEntry), home.heroCta)}
-    <p class="hero-note">${escapeHtml(home.heroNote)}</p>
+    <h1 id="home-title" aria-label="${escapeHtml(home.heroTitle)}">${home.heroLines.map((line) => `<span class="hero-title-line"><span>${escapeHtml(line)}</span></span>`).join('')}</h1>
+    <p class="hero-deck" data-hero-reveal="1">${escapeHtml(home.heroText)}</p>
+    <div data-hero-reveal="2">${renderHeaderLink(copy, navAnchor(routeFor('home'), 'choose-path', localeEntry), home.heroCta)}</div>
+    <p class="hero-note" data-hero-reveal="2">${escapeHtml(home.heroNote)}</p>
   </div>
-  <div class="hero-image-pair" aria-label="${escapeHtml(copy.accessibility.editorialImagesLabel)}">
-    ${renderImage('homeHeroLookA', copy, { index: '01', className: 'hero-frame-a', eager: true })}
-    ${renderImage('homeHeroLookB', copy, { index: '02', className: 'hero-frame-b', eager: true })}
-  </div>
+  <nav class="hero-route-index" aria-label="${escapeHtml(home.routeIndexLabel)}" data-hero-reveal="3">
+    ${home.routeIndex.map((item) => `<a class="hero-route" href="${escapeHtml(siteUrl(routeFor(item.route), localeEntry))}"><span class="hero-route-number">${escapeHtml(item.number)}</span><span class="hero-route-copy"><span class="hero-route-label">${escapeHtml(item.label)}</span><span class="hero-route-question">${escapeHtml(item.question)}</span></span><span class="hero-route-arrow" aria-hidden="true">↗</span></a>`).join('')}
+  </nav>
   <p class="hero-folio" aria-hidden="true">LOOKBERRY / FASHION IN CONTEXT</p>
 </section>
 <section id="choose-path" class="section section-paths" aria-labelledby="paths-title">
@@ -357,7 +356,7 @@ function shell(copy, pageKey, pageData, localeEntry, bodyContent) {
   const description = pageData.description;
   const cssHref = assetUrl('assets/css/site.css');
   const faviconHref = assetUrl('assets/favicon.svg');
-  const scriptTag = pageKey === 'contact' ? `<script src="${escapeHtml(assetUrl('assets/js/form.js'))}" defer></script>` : '';
+  const scriptTag = `<script src="${escapeHtml(assetUrl('assets/js/motion.js'))}" defer></script>${pageKey === 'contact' ? `\n  <script src="${escapeHtml(assetUrl('assets/js/form.js'))}" defer></script>` : ''}`;
   const direction = copy.direction || 'ltr';
   return `<!doctype html>
 <html lang="${escapeHtml(localeEntry.code)}" dir="${escapeHtml(direction)}">
@@ -433,6 +432,7 @@ function main() {
   fs.mkdirSync(path.join(outputDir, 'assets', 'js'), { recursive: true });
   fs.copyFileSync(path.join(root, 'site-src', 'styles', 'site.css'), path.join(outputDir, 'assets', 'css', 'site.css'));
   fs.copyFileSync(path.join(root, 'site-src', 'scripts', 'form.js'), path.join(outputDir, 'assets', 'js', 'form.js'));
+  fs.copyFileSync(path.join(root, 'site-src', 'scripts', 'motion.js'), path.join(outputDir, 'assets', 'js', 'motion.js'));
   fs.writeFileSync(path.join(outputDir, '.nojekyll'), '', 'utf8');
 
   const robotsBody = config.studentProjectSafeguards
