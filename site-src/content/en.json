@@ -43,7 +43,7 @@
     "routeIndexLabel": "Choose a route by what brings you here",
     "routeIndex": [
       { "number": "01", "label": "For shoppers", "question": "I saw a look. Is the product listed?", "route": "shoppers" },
-      { "number": "02", "label": "For sellers", "question": "I want to list my products.", "route": "sellers" },
+      { "number": "02", "label": "For sellers", "question": "{{commission:homeSellerQuestion}}", "route": "sellers" },
       { "number": "03", "label": "For partners", "question": "I can contribute a product or service.", "route": "partners" }
     ],
     "pathsEyebrow": "Start with what you need",
@@ -60,7 +60,7 @@
       {
         "number": "02",
         "persona": "Marketplace seller",
-        "question": "I want to list my products. How does the 10% commission work, and when am I paid?",
+        "question": "{{commission:homeSellerQuestion}}",
         "route": "sellers",
         "linkLabel": "For sellers"
       },
@@ -101,7 +101,7 @@
     "proofEyebrow": "What is confirmed",
     "proofTitle": "Clear terms. No invented proof.",
     "proofItems": [
-      { "label": "Marketplace commission", "value": "10% on each marketplace sale" },
+      { "label": "Marketplace commission", "value": "{{commission:homeCommission}}" },
       { "label": "Listing fees", "value": "Listing fees are not part of the model" },
       { "label": "Audience figures", "value": "No audience figures to share yet" }
     ],
@@ -114,7 +114,7 @@
       },
       {
         "question": "How does the marketplace earn commission?",
-        "answer": "LookBerry earns a 10% commission on each marketplace sale. Listing fees are not part of the model."
+        "answer": "{{commission:faqCommission}}"
       },
       {
         "question": "What do Attraction Likes and Style Likes refer to?",
@@ -157,7 +157,7 @@
       "faqTitle": "Before you buy",
       "facts": [
         "LookBerry is a fashion resale and marketplace business operating through an app and website.",
-        "LookBerry earns a 10% commission on each marketplace sale.",
+        "{{commission:shopperCommission}}",
         "A purchase carries more voting weight than a like alone."
       ],
       "faq": [
@@ -181,7 +181,7 @@
       "title": "For sellers — LookBerry student project",
       "description": "Marketplace seller terms confirmed by LookBerry’s supplied strategy, with open questions clearly marked.",
       "eyebrow": "For marketplace sellers",
-      "heading": "A sales channel, with the commission stated plainly.",
+      "heading": "A sales channel for your products.",
       "intro": "Brands and sellers can list products on LookBerry. The marketplace is the core business; product sales are currently limited, and the strategy makes no sales guarantee.",
       "imageSlot": "shopProduct",
       "imageCaption": "Product listing imagery · approved listing image pending",
@@ -189,12 +189,12 @@
       "termsEyebrow": "Marketplace terms",
       "termsHeading": "What is confirmed and what remains open",
       "facts": [
-        "LookBerry earns a 10% commission on each marketplace sale.",
+        "{{commission:sellerCommissionFact}}",
         "Listing fees are not part of the model.",
         "Product sales are currently limited. No seller research or verified audience figures are available in the strategy."
       ],
       "terms": [
-        { "label": "Commission", "value": "10% on each marketplace sale", "placeholder": false },
+        { "label": "Commission", "value": "{{commission:sellerCommissionTerm}}", "placeholder": false },
         { "label": "Listing fees", "value": "Listing fees are not part of the model", "placeholder": false },
         { "label": "Shipping", "value": "To be confirmed in the seller terms", "placeholder": true },
         { "label": "Fulfilment", "value": "To be confirmed in the seller terms", "placeholder": true },

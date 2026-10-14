@@ -60,7 +60,34 @@ function localeCopy(localeEntry) {
   if (copy.locale !== localeEntry.code) {
     throw new Error(`Locale mismatch in ${localeEntry.copyFile}: expected ${localeEntry.code}.`);
   }
-  return copy;
+  const rate = config.SHOW_COMMISSION_RATE ? config.COMMISSION_RATE : '';
+  const commissionCopy = {
+    homeSellerQuestion: rate
+      ? `I want to list my products. How does the ${rate} commission work, and when am I paid?`
+      : 'I want to list my products. How does the commission work, and when am I paid?',
+    homeCommission: rate ? `${rate} on each marketplace sale` : 'A commission on each marketplace sale',
+    faqCommission: rate
+      ? `LookBerry earns a ${rate} commission on marketplace sales. The rate and how it is calculated are set out in the seller terms.`
+      : 'LookBerry earns a commission on marketplace sales. The rate and how it is calculated are set out in the seller terms.',
+    shopperCommission: rate
+      ? `LookBerry earns a ${rate} commission on each marketplace sale.`
+      : 'LookBerry earns a commission on marketplace sales.',
+    sellerCommissionFact: rate
+      ? `LookBerry earns a ${rate} commission on each marketplace sale.`
+      : 'A commission applies to each marketplace sale. The rate is set out in the seller terms.',
+    sellerCommissionTerm: rate
+      ? `A ${rate} commission applies to each sale.`
+      : 'A commission applies to each sale. The rate is set out in the seller terms.'
+  };
+  const expandCommissionTokens = (value) => {
+    if (Array.isArray(value)) return value.map(expandCommissionTokens);
+    if (value && typeof value === 'object') {
+      return Object.fromEntries(Object.entries(value).map(([key, nested]) => [key, expandCommissionTokens(nested)]));
+    }
+    if (typeof value !== 'string') return value;
+    return value.replace(/\{\{commission:([A-Za-z]+)\}\}/g, (_, key) => commissionCopy[key] ?? '');
+  };
+  return expandCommissionTokens(copy);
 }
 
 function routeFor(pageKey) {

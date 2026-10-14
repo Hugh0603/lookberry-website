@@ -1,5 +1,7 @@
 {
   "BASE_URL": "https://Hugh0603.github.io/lookberry-website/",
+  "SHOW_COMMISSION_RATE": false,
+  "COMMISSION_RATE": "10\u0025",
   "studentProjectSafeguards": true,
   "activeLocales": [
     {
