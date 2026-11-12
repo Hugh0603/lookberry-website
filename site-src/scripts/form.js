@@ -50,7 +50,9 @@
         return;
       }
 
+      const submittedIntent = intent.value;
       form.reset();
+      document.dispatchEvent(new CustomEvent('lb:demo-form-success', { detail: { intent: submittedIntent } }));
       fields.forEach((field) => {
         field.removeAttribute('aria-invalid');
         setFieldError(field, field === intent ? 'intent' : 'ack', false);

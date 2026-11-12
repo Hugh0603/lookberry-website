@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 const toolsDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(toolsDir, '..');
 const config = readJson(path.join(root, 'site.config.json'));
-const outputDir = path.join(root, 'docs');
+// BASE_URL and OUT_DIR can be overridden from the environment for local preview builds.
+const outputDir = process.env.OUT_DIR ? path.resolve(process.env.OUT_DIR) : path.join(root, 'docs');
 const sourceAssets = path.join(root, 'site-src', 'assets');
 const pages = [
   { key: 'home', routeKey: 'home', titleKey: 'home' },
@@ -13,7 +14,8 @@ const pages = [
   { key: 'sellers', routeKey: 'sellers', titleKey: 'pages.sellers' },
   { key: 'partners', routeKey: 'partners', titleKey: 'pages.partners' },
   { key: 'battles', routeKey: 'battles', titleKey: 'pages.battles' },
-  { key: 'contact', routeKey: 'contact', titleKey: 'pages.contact' }
+  { key: 'contact', routeKey: 'contact', titleKey: 'pages.contact' },
+  { key: 'privacy', routeKey: 'privacy', titleKey: 'pages.privacy' }
 ];
 
 function readJson(file) {
@@ -38,7 +40,11 @@ function assertBaseUrl(value) {
   return url;
 }
 
-const baseUrl = assertBaseUrl(config.BASE_URL);
+const baseUrl = assertBaseUrl(process.env.BASE_URL || config.BASE_URL);
+const gtmId = String(process.env.GTM_ID ?? config.analytics?.gtmContainerId ?? '').trim();
+if (gtmId && !/^GTM-[A-Z0-9]{4,12}$/.test(gtmId)) {
+  throw new Error('analytics.gtmContainerId must look like GTM-XXXXXXX, or be empty to switch measurement off.');
+}
 
 function siteUrl(route = '', localeEntry = config.activeLocales[0]) {
   const prefix = localeEntry.pathPrefix || '';
@@ -167,7 +173,7 @@ function renderImage(slotKey, copy, options = {}) {
 }
 
 function sectionHeading(eyebrow, title, intro = '', id = '') {
-  return `<div class="section-heading" data-reveal><p class="eyebrow">${escapeHtml(eyebrow)}</p><h2 id="${escapeHtml(id)}">${escapeHtml(title)}</h2>${intro ? `<p class="section-intro">${escapeHtml(intro)}</p>` : ''}</div>`;
+  return `<div class="section-heading" data-reveal>${eyebrow ? `<p class="eyebrow">${escapeHtml(eyebrow)}</p>` : ''}<h2 id="${escapeHtml(id)}">${escapeHtml(title)}</h2>${intro ? `<p class="section-intro">${escapeHtml(intro)}</p>` : ''}</div>`;
 }
 
 function renderFaq(items) {
@@ -352,6 +358,39 @@ function renderContactPage(copy, localeEntry) {
 </main>`;
 }
 
+function renderPrivacyPage(copy) {
+  const page = copy.pages.privacy;
+  const blocks = page.blocks.map((block) => `<section class="section section-privacy" aria-labelledby="privacy-${escapeHtml(block.title.toLowerCase().replace(/[^a-z]+/g, '-'))}">
+  ${sectionHeading('', block.title, '', `privacy-${block.title.toLowerCase().replace(/[^a-z]+/g, '-')}`)}
+  <ul class="fact-list">${(block.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('')}${(block.placeholders || []).map((item) => `<li><span class="term-placeholder">${escapeHtml(item)}</span></li>`).join('')}</ul>
+</section>`).join('');
+  return `<main id="main" class="page-main interior-page page-privacy">
+<section class="contact-hero" aria-labelledby="page-title">
+  <div class="contact-copy">
+    <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+    <h1 id="page-title">${escapeHtml(page.heading)}</h1>
+    <p class="hero-deck">${escapeHtml(page.intro)}</p>
+  </div>
+</section>
+${blocks}
+</main>`;
+}
+
+function renderConsent(copy, localeEntry) {
+  if (!gtmId) return '';
+  const c = copy.consent;
+  return `<div class="consent-banner" data-consent-banner role="region" aria-label="${escapeHtml(c.label)}" hidden>
+  <div class="consent-copy">
+    <p class="consent-title">${escapeHtml(c.title)}</p>
+    <p>${escapeHtml(c.text)} <a href="${escapeHtml(siteUrl(routeFor('privacy'), localeEntry))}">${escapeHtml(c.policyLink)}</a></p>
+  </div>
+  <div class="consent-actions">
+    <button type="button" class="button" data-consent="denied">${escapeHtml(c.decline)}</button>
+    <button type="button" class="button button-primary" data-consent="granted">${escapeHtml(c.accept)}</button>
+  </div>
+</div>`;
+}
+
 function renderFooter(copy, localeEntry) {
   const footer = copy.footer;
   const pagesFooter = [
@@ -370,10 +409,46 @@ function renderFooter(copy, localeEntry) {
   </div>
   <div class="footer-meta">
     <p class="student-disclaimer">${escapeHtml(footer.studentLine)}</p>
-    <p class="legal-placeholders"><span>${escapeHtml(footer.privacyPlaceholder)}</span><span>${escapeHtml(footer.termsPlaceholder)}</span></p>
+    <p class="legal-placeholders"><a href="${escapeHtml(siteUrl(routeFor('privacy'), localeEntry))}">${escapeHtml(footer.privacyLink)}</a>${gtmId ? `<button type="button" class="link-button" data-consent-open>${escapeHtml(copy.consent.settings)}</button>` : ''}<span>${escapeHtml(footer.termsPlaceholder)}</span></p>
     <a class="back-to-top" href="#top">${escapeHtml(footer.backToTop)}<span aria-hidden="true">↑</span></a>
   </div>
 </footer>`;
+}
+
+function jsonLd(copy, pageKey, pageData, localeEntry) {
+  const url = siteUrl(routeFor(pageKey), localeEntry);
+  const graph = [];
+  if (pageKey === 'home') {
+    graph.push({
+      '@type': 'WebSite',
+      name: `${copy.brand} student project`,
+      url: siteUrl('', localeEntry),
+      inLanguage: localeEntry.code,
+      description: pageData.description
+    });
+  } else {
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: copy.brand, item: siteUrl('', localeEntry) },
+        { '@type': 'ListItem', position: 2, name: pageData.eyebrow || pageData.title, item: url }
+      ]
+    });
+  }
+  // FAQ markup only for answers that are real. Open items ("to be confirmed") are left out.
+  const faq = (pageKey === 'home' ? copy.home.faq : copy.pages[pageKey]?.faq) || [];
+  const answered = faq.filter((item) => item.answer);
+  if (answered.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      mainEntity: answered.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer }
+      }))
+    });
+  }
+  return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\u003c')}</script>`;
 }
 
 function shell(copy, pageKey, pageData, localeEntry, bodyContent) {
@@ -384,7 +459,7 @@ function shell(copy, pageKey, pageData, localeEntry, bodyContent) {
   const description = pageData.description;
   const cssHref = assetUrl('assets/css/site.css');
   const faviconHref = assetUrl('assets/favicon.svg');
-  const scriptTag = `<script src="${escapeHtml(assetUrl('assets/js/motion.js'))}" defer></script>${pageKey === 'contact' ? `\n  <script src="${escapeHtml(assetUrl('assets/js/form.js'))}" defer></script>` : ''}`;
+  const scriptTag = `<script src="${escapeHtml(assetUrl('assets/js/motion.js'))}" defer></script>${pageKey === 'contact' ? `\n  <script src="${escapeHtml(assetUrl('assets/js/form.js'))}" defer></script>` : ''}${gtmId ? `\n  <script src="${escapeHtml(assetUrl('assets/js/consent.js'))}" defer></script>` : ''}`;
   const direction = copy.direction || 'ltr';
   return `<!doctype html>
 <html lang="${escapeHtml(localeEntry.code)}" dir="${escapeHtml(direction)}">
@@ -395,13 +470,23 @@ function shell(copy, pageKey, pageData, localeEntry, bodyContent) {
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${escapeHtml(canonical)}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="${escapeHtml(copy.brand)} student project">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${escapeHtml(canonical)}">
+  <meta property="og:image" content="${escapeHtml(assetUrl(config.imageSlots.homeCampaign.src))}">
+  <meta property="og:image:alt" content="${escapeHtml(copy.mediaAlt.homeCampaign)}">
+  <meta name="twitter:card" content="summary_large_image">
+  ${jsonLd(copy, pageKey, pageData, localeEntry)}
   <link rel="icon" type="image/svg+xml" href="${escapeHtml(faviconHref)}">
   <link rel="stylesheet" href="${escapeHtml(cssHref)}">
 </head>
-<body id="top" class="page-${escapeHtml(pageKey)}">
+<body id="top" class="page-${escapeHtml(pageKey)}"${gtmId ? ` data-gtm="${escapeHtml(gtmId)}"` : ''}>
 ${renderHeader(copy, pageKey, localeEntry)}
 ${bodyContent}
 ${renderFooter(copy, localeEntry)}
+${renderConsent(copy, localeEntry)}
 ${scriptTag}
 </body>
 </html>`;
@@ -410,6 +495,7 @@ ${scriptTag}
 function pageBody(pageKey, copy, localeEntry) {
   if (pageKey === 'home') return renderHome(copy, localeEntry);
   if (pageKey === 'contact') return renderContactPage(copy, localeEntry);
+  if (pageKey === 'privacy') return renderPrivacyPage(copy);
   return renderPersonaPage(copy, localeEntry, pageKey);
 }
 
@@ -461,6 +547,7 @@ function main() {
   fs.copyFileSync(path.join(root, 'site-src', 'styles', 'site.css'), path.join(outputDir, 'assets', 'css', 'site.css'));
   fs.copyFileSync(path.join(root, 'site-src', 'scripts', 'form.js'), path.join(outputDir, 'assets', 'js', 'form.js'));
   fs.copyFileSync(path.join(root, 'site-src', 'scripts', 'motion.js'), path.join(outputDir, 'assets', 'js', 'motion.js'));
+  fs.copyFileSync(path.join(root, 'site-src', 'scripts', 'consent.js'), path.join(outputDir, 'assets', 'js', 'consent.js'));
   fs.writeFileSync(path.join(outputDir, '.nojekyll'), '', 'utf8');
 
   const robotsBody = config.studentProjectSafeguards

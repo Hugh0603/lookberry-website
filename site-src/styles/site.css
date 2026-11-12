@@ -483,3 +483,14 @@ p { max-width: 68ch; margin-bottom: var(--space-2); }
   .footer-meta { grid-template-columns: 1fr; gap: var(--space-2); }
   .legal-placeholders { gap: 8px 16px; }
 }
+
+/* Consent banner and footer links (measurement is off unless a GTM ID is configured) */
+.consent-banner { position: fixed; inset: auto var(--gutter) var(--space-2) var(--gutter); z-index: 50; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); max-width: 960px; margin-inline: auto; padding: var(--space-3); background: var(--surface-raised); border: 1px solid var(--rule); color: var(--ink); }
+.consent-banner[hidden] { display: none; }
+.consent-copy { flex: 1 1 340px; }
+.consent-copy p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.consent-copy .consent-title { margin-bottom: 4px; color: var(--ink); font-weight: 700; }
+.consent-copy a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.consent-actions { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.legal-placeholders a, .link-button { color: var(--ink); font: inherit; font-size: 0.76rem; text-decoration: underline; text-underline-offset: 3px; background: none; border: 0; padding: 0; cursor: pointer; }
+.link-button:focus-visible, .consent-banner a:focus-visible, .consent-banner button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }

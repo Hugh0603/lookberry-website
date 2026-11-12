@@ -1,7 +1,7 @@
 {
   "BASE_URL": "https://Hugh0603.github.io/lookberry-website/",
   "SHOW_COMMISSION_RATE": false,
-  "COMMISSION_RATE": "10\u0025",
+  "COMMISSION_RATE": "10%",
   "studentProjectSafeguards": true,
   "activeLocales": [
     {
@@ -17,7 +17,8 @@
     "sellers": "for-sellers/",
     "partners": "for-partners/",
     "battles": "fashion-battles/",
-    "contact": "contact/"
+    "contact": "contact/",
+    "privacy": "privacy/"
   },
   "externalLinks": {
     "shop": "https://www.lookberry.com/shop",
@@ -56,5 +57,8 @@
       "objectPosition": "72% 50%",
       "shotListNote": "Original student-project campaign concept image, not an official LookBerry campaign or approved brand asset."
     }
+  },
+  "analytics": {
+    "gtmContainerId": "GTM-5C78XVQS"
   }
 }

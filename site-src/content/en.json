@@ -37,15 +37,34 @@
     "description": "A student project introducing LookBerry’s fashion marketplace and Fashion Battles, with clear paths for shoppers, sellers and partners.",
     "heroEyebrow": "Fashion discovery · interaction · shopping",
     "heroTitle": "See the look. Find it where it’s listed.",
-    "heroLines": ["See the look.", "Find it where", "it’s listed."],
+    "heroLines": [
+      "See the look.",
+      "Find it where",
+      "it’s listed."
+    ],
     "heroText": "LookBerry brings fashion discovery, social interaction and shopping together. Fashion Battles is its fashion competition and content format.",
     "heroCta": "Choose your route",
     "heroNote": "Fashion Battles episodes are published on YouTube. Featured products can be bought through LookBerry where they are listed.",
     "routeIndexLabel": "Choose a route by what brings you here",
     "routeIndex": [
-      { "number": "01", "label": "For shoppers", "question": "I saw a look. Is the product listed?", "route": "shoppers" },
-      { "number": "02", "label": "For sellers", "question": "{{commission:homeSellerQuestion}}", "route": "sellers" },
-      { "number": "03", "label": "For partners", "question": "I can contribute a product or service.", "route": "partners" }
+      {
+        "number": "01",
+        "label": "For shoppers",
+        "question": "I saw a look. Is the product listed?",
+        "route": "shoppers"
+      },
+      {
+        "number": "02",
+        "label": "For sellers",
+        "question": "{{commission:homeSellerQuestion}}",
+        "route": "sellers"
+      },
+      {
+        "number": "03",
+        "label": "For partners",
+        "question": "I can contribute a product or service.",
+        "route": "partners"
+      }
     ],
     "pathsEyebrow": "Start with what you need",
     "pathsTitle": "Three ways into LookBerry",
@@ -103,13 +122,30 @@
     "proofEyebrow": "What is confirmed",
     "proofTitle": "Clear terms. No invented proof.",
     "proofItems": [
-      { "label": "Marketplace commission", "value": "{{commission:homeCommission}}" },
-      { "label": "Listing fees", "value": "Listing fees are not part of the model" },
-      { "label": "Audience figures", "value": "No audience figures to share yet" }
+      {
+        "label": "Marketplace commission",
+        "value": "{{commission:homeCommission}}"
+      },
+      {
+        "label": "Listing fees",
+        "value": "Listing fees are not part of the model"
+      },
+      {
+        "label": "Audience figures",
+        "value": "No audience figures to share yet"
+      }
     ],
     "faqEyebrow": "Straight answers",
     "faqTitle": "Questions worth asking",
     "faq": [
+      {
+        "question": "What is LookBerry?",
+        "answer": "LookBerry is a Dubai-based fashion resale and marketplace business operating through an app and website. Fashion Battles is its interactive fashion competition and content format."
+      },
+      {
+        "question": "Where can I watch Fashion Battles?",
+        "answer": "Episodes are published on YouTube, with links in the LookBerry app. Two episodes have been released and a third is in production."
+      },
       {
         "question": "Is every product shown in Fashion Battles available to buy?",
         "answer": "No. A featured product can be bought through LookBerry where it is listed. Not every product shown is necessarily available."
@@ -196,12 +232,36 @@
         "Product sales are currently limited. No seller research or verified audience figures are available in the strategy."
       ],
       "terms": [
-        { "label": "Commission", "value": "{{commission:sellerCommissionTerm}}", "placeholder": false },
-        { "label": "Listing fees", "value": "Listing fees are not part of the model", "placeholder": false },
-        { "label": "Shipping", "value": "To be confirmed in the seller terms", "placeholder": true },
-        { "label": "Fulfilment", "value": "To be confirmed in the seller terms", "placeholder": true },
-        { "label": "Returns", "value": "To be confirmed in the seller terms", "placeholder": true },
-        { "label": "Payout timing", "value": "To be confirmed in the seller terms", "placeholder": true }
+        {
+          "label": "Commission",
+          "value": "{{commission:sellerCommissionTerm}}",
+          "placeholder": false
+        },
+        {
+          "label": "Listing fees",
+          "value": "Listing fees are not part of the model",
+          "placeholder": false
+        },
+        {
+          "label": "Shipping",
+          "value": "To be confirmed in the seller terms",
+          "placeholder": true
+        },
+        {
+          "label": "Fulfilment",
+          "value": "To be confirmed in the seller terms",
+          "placeholder": true
+        },
+        {
+          "label": "Returns",
+          "value": "To be confirmed in the seller terms",
+          "placeholder": true
+        },
+        {
+          "label": "Payout timing",
+          "value": "To be confirmed in the seller terms",
+          "placeholder": true
+        }
       ],
       "note": "Fashion Battles may support product visibility. Participation does not guarantee reach, engagement or sales.",
       "cta": "Ask about listing",
@@ -277,6 +337,47 @@
       "mailtoHeading": "Email address placeholder",
       "mailtoTitle": "Placeholder email · replace before launch",
       "mailtoNote": "This highlighted address is a placeholder and is not an active LookBerry contact."
+    },
+    "privacy": {
+      "title": "Privacy and cookies — LookBerry student project",
+      "description": "What this student-project site collects, which tools it uses and how to change your cookie choice.",
+      "eyebrow": "Privacy and cookies",
+      "heading": "What this site collects.",
+      "intro": "This is a student project, not the official LookBerry website. It asks for no personal information. The notes below describe what the site does today.",
+      "blocks": [
+        {
+          "title": "What the site does not do",
+          "items": [
+            "The contact form is a demo. It sends nothing and stores nothing.",
+            "There are no accounts, no newsletter and no advertising pixels (Meta, LinkedIn or Google Ads).",
+            "Nothing is sold or shared for advertising."
+          ]
+        },
+        {
+          "title": "Measurement tools",
+          "items": [
+            "Google Tag Manager and Google Analytics 4 are used to count visits, see which pages and links are used and learn which campaign source a visit came from.",
+            "They load only after you choose Accept measurement. Before that, and if you decline, no measurement script runs and no measurement cookie is set.",
+            "The data is aggregated and used only to judge this student project.",
+            "Because the measurement ID is set in the site configuration, the tools are off until the project team switches them on."
+          ]
+        },
+        {
+          "title": "Your choice",
+          "items": [
+            "Your choice is stored in your browser (local storage) so the site does not ask again.",
+            "Once measurement is switched on, you can change your choice at any time with the Cookie settings link in the footer."
+          ]
+        },
+        {
+          "title": "Still to be confirmed",
+          "placeholders": [
+            "Name and contact details of the person or organisation responsible for the data",
+            "Legal review of this notice before any public launch",
+            "Retention period for analytics data, as configured in Google Analytics"
+          ]
+        }
+      ]
     }
   },
   "footer": {
@@ -285,6 +386,17 @@
     "privacyPlaceholder": "Privacy policy · placeholder",
     "termsPlaceholder": "Terms · placeholder",
     "backToTop": "Back to top",
-    "navLabel": "Footer navigation"
+    "navLabel": "Footer navigation",
+    "privacyLink": "Privacy and cookies"
+  },
+  "consent": {
+    "label": "Cookie choice",
+    "title": "Measurement cookies",
+    "text": "We would like to measure how this student-project site is used, with Google Tag Manager and Google Analytics. These tools set cookies only if you accept. The site works the same if you decline.",
+    "accept": "Accept measurement",
+    "decline": "Decline",
+    "policyLink": "Read how it works",
+    "settings": "Cookie settings",
+    "saved": "Your choice is saved in this browser."
   }
 }
