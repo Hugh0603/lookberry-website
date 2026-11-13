@@ -33,8 +33,8 @@
     "line": "Approved still pending"
   },
   "home": {
-    "title": "LookBerry — fashion discovered, considered and found",
-    "description": "A student project introducing LookBerry’s fashion marketplace and Fashion Battles, with clear paths for shoppers, sellers and partners.",
+    "title": "LookBerry — fashion marketplace and Fashion Battles",
+    "description": "A student project introducing the LookBerry fashion marketplace and Fashion Battles, with clear paths for shoppers, sellers and partners.",
     "heroEyebrow": "Fashion discovery · interaction · shopping",
     "heroTitle": "See the look. Find it where it’s listed.",
     "heroLines": [
@@ -182,8 +182,8 @@
   },
   "pages": {
     "shoppers": {
-      "title": "For shoppers — LookBerry student project",
-      "description": "How to discover and shop fashion through LookBerry, with clear notes about product availability and unconfirmed terms.",
+      "title": "Shop the look from a fashion video — LookBerry",
+      "description": "Seen a look in a fashion video? How to find the product on the LookBerry marketplace, where it is listed, and what is still to be confirmed.",
       "eyebrow": "For shoppers",
       "heading": "A look caught your eye.",
       "intro": "Find products through the LookBerry marketplace. A product featured in Fashion Battles can be bought where it is listed; not every featured product is necessarily available.",
@@ -216,8 +216,8 @@
       "ctaKind": "shop"
     },
     "sellers": {
-      "title": "For sellers — LookBerry student project",
-      "description": "Marketplace seller terms confirmed by LookBerry’s supplied strategy, with open questions clearly marked.",
+      "title": "Sell fashion on the LookBerry marketplace — sellers",
+      "description": "List fashion products on the LookBerry marketplace: what is confirmed about commission and fees, and which terms are still open.",
       "eyebrow": "For marketplace sellers",
       "heading": "A sales channel for your products.",
       "intro": "Brands and sellers can list products on LookBerry. The marketplace is the core business; product sales are currently limited, and the strategy makes no sales guarantee.",
@@ -268,8 +268,8 @@
       "ctaKind": "sellerContact"
     },
     "partners": {
-      "title": "For partners — LookBerry student project",
-      "description": "An accurate introduction to current in-kind Fashion Battles partnerships, without unverified reach or sales claims.",
+      "title": "Fashion brand partnerships: Fashion Battles — LookBerry",
+      "description": "How fashion and lifestyle brands can contribute products or services to a Fashion Battles episode on agreed terms, with no promised reach or sales.",
       "eyebrow": "For Fashion Battles partners",
       "heading": "Contribute to a production on agreed terms.",
       "intro": "Current brand partnerships contribute products or services in kind. The contribution and how it is used depend on the agreement.",
@@ -287,8 +287,8 @@
       "ctaKind": "partnerContact"
     },
     "battles": {
-      "title": "Fashion Battles — LookBerry student project",
-      "description": "Fashion Battles is LookBerry’s interactive fashion competition and content format, published on YouTube.",
+      "title": "Fashion Battles by LookBerry — episodes on YouTube",
+      "description": "Fashion Battles is LookBerry’s interactive fashion competition. Episodes are published on YouTube, with links in the LookBerry app.",
       "eyebrow": "Fashion Battles · YouTube",
       "heading": "Fashion, seen from more than one angle.",
       "intro": "Fashion Battles is an interactive fashion competition and content format that supports awareness, product discovery and the LookBerry marketplace.",
